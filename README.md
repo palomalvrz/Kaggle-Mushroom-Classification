@@ -76,6 +76,11 @@ This means that the odor feature can serve as a reliable predictor for classifyi
 | Actual: Edible (0)   | 846                   | 0                         |
 | Actual: Poisonous (1)| 0                     | 778                       |
 
+## Conclusions
+
+- **Odor** is the most important predictor of mushroom class (especially foul odor for poisonous)
+- **Gill-size** and **gill-color** also contribute significantly
+- Random Forests perform very well on this structured categorical data
 
 
  
