@@ -13,7 +13,7 @@ This project classifies mushrooms as edible or poisonous based on its physical a
 
 ### Preprocessing / Clean-up
 
-- Dropped ‘veil-type', and ‘stalk-root' (missing values)
+- Dropped ‘veil-type'
 - One-hot encoded all categorical features using `ColumnTransformer` and `OneHotEncoder`
 - Label-encoded target feature
 
