@@ -53,8 +53,28 @@ This means that the odor feature can serve as a reliable predictor for classifyi
 - Training duration: Fast (seconds per fold)
 - K-fold CV used to maximize generalizability
 - Best hyperparameters selected based on validation accuracy
+  - max_depth = 10
+  - n_estimators = 10
 - Feature importances averaged across folds
 
+## Random Forest Performance
+
+**Classification Report**
+| Class         | Precision | Recall | F1-score | Support |
+|--------------|-----------|--------|----------|---------|
+| 0 (edible)   | 1.00      | 1.00   | 1.00     | 846     |
+| 1 (poisonous)| 1.00      | 1.00   | 1.00     | 778     |
+| **Accuracy** |           |        | **1.00** | 1624    |
+| **Macro avg**| 1.00      | 1.00   | 1.00     | 1624    |
+| **Weighted avg** | 1.00  | 1.00   | 1.00     | 1624    |
+
+
+**Confusion Matrix**
+
+|               | Predicted: Edible (0) | Predicted: Poisonous (1) |
+|---------------|-----------------------|---------------------------|
+| Actual: Edible (0)   | 846                   | 0                         |
+| Actual: Poisonous (1)| 0                     | 778                       |
 
 
 
