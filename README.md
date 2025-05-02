@@ -7,7 +7,7 @@ This project classifies mushrooms as edible or poisonous based on its physical a
 ### Data
 
 - **Type**: Categorical CSV data (tabular)
-- **Input**: 21 categorical features per mushroom sample 
+- **Input**: 22 categorical features per mushroom sample 
 - **Output**: Binary label:  edible (0) and poisonous (1)
 - **Size**: 8124 instances 
 
