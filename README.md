@@ -76,11 +76,47 @@ This means that the odor feature can serve as a reliable predictor for classifyi
 | Actual: Edible (0)   | 846                   | 0                         |
 | Actual: Poisonous (1)| 0                     | 778                       |
 
+## Visualizations
+![Festure Importance by Original Festure](https://github.com/user-attachments/assets/90f9be8d-1148-457c-8dbc-0747e667454d)
+
+### Decision Tree Plot
+![AD_4nXexfrO_6bzARI2e8hZPleQUYy7EQGS1jxaGiQyjaimhPlMYerLeFwYKWKwZSkOf13eGX42i8v3vEp_J3lYuxZRY2_JEpzq_mBR0SKq6QvbIavO74iKVeYH6](https://github.com/user-attachments/assets/492d3770-dc74-48f9-81bc-e86ff9befe94)
+
+
+
 ## Conclusions
 
 - **Odor** is the most important predictor of mushroom class (especially foul odor for poisonous)
 - **Gill-size** and **gill-color** also contribute significantly
 - Random Forests perform very well on this structured categorical data
+
+## Future Work
+
+- Try other models like Gradient Boosted Trees or SVM
+- Create a more interpretable tree plot
+- Test with other mushroom datasets
+
+## How to Reproduce Results
+1. Clone this repository.
+1. Download CSV mushroom file from kaggle (https://www.kaggle.com/datasets/uciml/mushroom-classification/data) and ensure its in the same directory as the notebooks.
+2. Run `EDA_visualizations.ipynb` for exploratory data analysis and visualizations.
+3. Run `preprocessing_train.ipynb` to preprocess data, train the model, and evaluate performance.
+
+## Overview of files in repository
+- `EDA_visualizations.ipynb` for exploratory data analysis, visualizations of feature distributions, and frequency tables.
+- `preprocessing_train.ipynb` Loads data, encodes features, performs model training and evaluation, and visualizes feature importance and tree plot.
+
+## Software setup
+- Packages: `pandas`, `numpy`, `matplotlib`, `scikit-learn`, `seaborn`
+
+## References
+- This project uses a training loop structure adapted from instructional materials provided by Professor Yike Shen as part of the ENVR-4458 course.
+- UCI Machine Learning Repository (https://archive.ics.uci.edu)
+- Scikit-learn Documentation (https://scikit-learn.org/stable/)
+
+
+
+
 
 
  
