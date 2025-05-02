@@ -39,7 +39,7 @@ This means that the odor feature can serve as a reliable predictor for classifyi
 
 ### Problem Formulation
 
-- Input: One-hot encoded categorical features (20)
+- Input: One-hot encoded categorical features (21)
 - Output: Binary edible/poisonous class
   - **Split**: 5-fold cross-validation: each fold uses 80% of data for training (split into 87.5% train, 12.5% validation) and 20% as the test set
 - Model: Random Forest Classifier (sklearn)
