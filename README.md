@@ -1,7 +1,7 @@
 # Kaggle Mushroom Classification using Random Forest
-This repository holds an attempt to to classify mushrooms as edible or poisonous using Random Forests, based on categorical features from the UCI Mushroom Dataset found on Kaggle (https://www.kaggle.com/datasets/uciml/mushroom-classification/data).
+This repository holds an attempt to classify mushrooms as edible or poisonous using Random Forests, based on categorical features from the UCI Mushroom Dataset found on Kaggle (https://www.kaggle.com/datasets/uciml/mushroom-classification/data).
 # Overview
-This project classifies mushrooms as edible or poisonous based on its physical attributes. Each observation describes a mushroom sample across 22 categorical features (odor, cap color, bruises, etc), and the target variable is its edibility. The approach in this repository formulates the problem as a classification task. We preprocess the data by dropping a constant feature (veil-type), then one-hot encoding the features (X) and label encoding the target (y). We used 5-fold cross-validation, and further split the training set (80%) into training and validation sets (87.5%/12.5%) for hyperparameter tuning. The test fold (20%) was used for final evaluation. A Random Forest Classifier was trained and evaluated using accuracy and weighted F1-score, achieving perfect performance (100%). Key predictive features include odor, gill-size, and gill-color.
+This project classifies mushrooms as edible or poisonous based on its physical attributes. Each observation describes a mushroom sample across 22 categorical features (odor, cap color, bruises, etc), and the target variable is its edibility. The approach in this repository formulates the problem as a classification task. We preprocess the data by dropping a constant feature (veil-type), then one-hot encoding the features (X) and label encoding the target (y). We used 5-fold cross-validation, and further split the training set (80%) into training and validation sets (87.5%/12.5%) for hyperparameter tuning. The test fold (20%) was used for final evaluation. A Random Forest Classifier was trained and evaluated using accuracy and weighted F1-score, achieving perfect performance (100%). Key predictive features include odor, gill-size, and gill-color. 
 ## Summary of Work Done
 
 ### Data
@@ -9,7 +9,7 @@ This project classifies mushrooms as edible or poisonous based on its physical a
 - **Type**: Categorical CSV data (tabular)
 - **Input**: 22 categorical features per mushroom sample 
 - **Output**: Binary label:  edible (0) and poisonous (1)
-- **Size**: 8124 instances 
+- **Size**: 8124 instances
 
 ### Preprocessing / Clean-up
 
