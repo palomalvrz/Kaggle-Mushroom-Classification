@@ -1,26 +1,26 @@
 # Kaggle Mushroom Classification using Random Forest
-This repository holds an attempt to classify mushrooms as edible or poisonous using Random Forests, based on categorical features from the UCI Mushroom Dataset found on Kaggle (https://www.kaggle.com/datasets/uciml/mushroom-classification/data).
+This repository holds an attempt to classify mushrooms as edible or poisonous using Random Forests, based on categorical features from the [UCI Mushroom Dataset found on Kaggle](https://www.kaggle.com/datasets/uciml/mushroom-classification/data).
 # Overview
-This project classifies mushrooms as edible or poisonous based on its physical attributes. Each observation describes a mushroom sample across 22 categorical features (odor, cap color, bruises, etc), and the target variable is its edibility. The approach in this repository formulates the problem as a classification task. We preprocess the data by dropping a constant feature (veil-type), then one-hot encoding the features (X) and label encoding the target (y). We used 5-fold cross-validation, and further split the training set (80%) into training and validation sets (87.5%/12.5%) for hyperparameter tuning. The test fold (20%) was used for final evaluation. A Random Forest Classifier was trained and evaluated using accuracy and weighted F1-score, achieving perfect performance (100%). Key predictive features include odor, gill-size, and gill-color. 
+This project classifies mushrooms as edible or poisonous based on their physical attributes. Each observation describes a mushroom sample across 22 categorical features (odor, cap color, bruises, etc), and the target variable is its edibility. The approach in this repository formulates the problem as a classification task. We preprocess the data by dropping a constant feature (veil-type), then one-hot encoding the features (X) and label encoding the target (y). We used 5-fold cross-validation, and further split the training set (80%) into training and validation sets (87.5%/12.5%) for hyperparameter tuning. The test fold (20%) was used for final evaluation. A Random Forest Classifier was trained and evaluated using accuracy and weighted F1-score, achieving perfect performance (100%). This high accuracy is expected, as the dataset is relatively simple. Key features like odor, gill-size, and stalk-surface-above-ring are so discriminative that models can easily distinguish between edible and poisonous mushrooms.
 ## Summary of Work Done
 
 ### Data
 
 - **Type**: Categorical CSV data (tabular)
-- **Input**: 22 categorical features per mushroom sample 
-- **Output**: Binary label:  edible (0) and poisonous (1)
-- **Size**: 8124 instances
+- **Input**: 22 categorical features per mushroom sample (before preprocessing)
+- **Output**: Binary label:  edible (e) and poisonous (p)
+- **Size**: 8124 instances (374 kB)
 
 ### Preprocessing / Clean-up
 
 - Dropped ‘veil-type'
 - One-hot encoded all categorical features using `ColumnTransformer` and `OneHotEncoder`
-- Label-encoded target feature
+- Label-encoded target feature (‘class’) into binary values: 0 (edible), 1 (poisonous)
 
 
 ### Data Visualization
 
-- Bar plots and frequency tables showing feature distributions (e.g., odor, cap color) across classes
+- Bar plots and frequency tables showing feature distributions (odor, cap color, gill-size, etc) across classes.
 - Conditional probability tables:
   - **P(Class | Feature Category)** : proportion of edible vs. poisonous mushrooms within each category of a feature.
   - **P(Feature Category | Class)** : distribution of feature categories within class.
@@ -39,14 +39,14 @@ This means that the odor feature can serve as a reliable predictor for classifyi
 
 ### Problem Formulation
 
-- Input: One-hot encoded categorical features (21)
-- Output: Binary edible/poisonous class
-  - **Split**: 5-fold cross-validation: each fold uses 80% of data for training (split into 87.5% train, 12.5% validation) and 20% as the test set
-- Model: Random Forest Classifier (sklearn)
-- Hyperparameters: max_depth, n_estimators tuned via validation set
-- Metrics: accuracy and weighted F1 score
+- **Input**: One-hot encoded categorical features (21)
+- **Output**: Binary edible/poisonous class
+- **Split**: 5-fold cross-validation: each fold uses 80% of data for training (split into 87.5% train, 12.5% validation) and 20% as the test set
+- **Model**: Random Forest Classifier (sklearn)
+- **Hyperparameters**: max_depth, n_estimators tuned via validation set
+- **Metrics**: accuracy and weighted F1 score
 
-## Training
+## Model Training
 
 - Environment: Jupyter Notebook on local machine
 - sklearn for model training and metrics
@@ -84,21 +84,19 @@ This means that the odor feature can serve as a reliable predictor for classifyi
 
 
 
-## Conclusions
+## Conclusion
 
-- **Odor** is the most important predictor of mushroom class (especially foul odor for poisonous)
-- **Gill-size** and **stalk-surface-above-ring** also contribute significantly
-- Random Forests perform very well on this structured categorical data
+The Random Forest model performed very well on this structured categorical dataset, achieving perfect accuracy and F1-scores. This high performance is due to the highly predictive features, making the classification task relatively straightforward for most models. Odor is the most important predictor of mushroom class, especially foul odor for poisonous mushrooms, while gill-size and stalk-surface-above-ring also contribute significantly. The strength of these key features provides a clear separation of class, minimizing the risk of overfitting despite the model's perfect scores.
 
 ## Future Work
 
+- Test the model with more diverse or complex mushroom datasets 
 - Try other models like Gradient Boosted Trees or SVM
 - Create a more interpretable tree plot
-- Test with other mushroom datasets
 
 ## How to Reproduce Results
 1. Clone this repository.
-1. Download CSV mushroom file from kaggle (https://www.kaggle.com/datasets/uciml/mushroom-classification/data) and ensure its in the same directory as the notebooks.
+1. Download [CSV mushroom file from kaggle](https://www.kaggle.com/datasets/uciml/mushroom-classification/data) and ensure its in the same directory as the notebooks.
 2. Run `EDA_visualizations.ipynb` for exploratory data analysis and visualizations.
 3. Run `preprocessing_train.ipynb` to preprocess data, train the model, and evaluate performance.
 
@@ -111,8 +109,8 @@ This means that the odor feature can serve as a reliable predictor for classifyi
 
 ## References
 - This project uses a training loop structure adapted from instructional materials provided by Professor Yike Shen as part of the ENVR-4458 course.
-- UCI Machine Learning Repository (https://archive.ics.uci.edu)
-- Scikit-learn Documentation (https://scikit-learn.org/stable/)
+- [UCI Machine Learning Repository](https://archive.ics.uci.edu)
+- [Scikit-learn Documentation](https://scikit-learn.org/stable/)
 
 
 
